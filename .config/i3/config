@@ -102,8 +102,6 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 bindsym $mod+Shift+r mode "resize"
 bindsym Escape mode "default"
-
-}
 	
 mode "resize" {
 	bindsym h resize shrink width 10 px or 10 ppt
