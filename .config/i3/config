@@ -25,71 +25,84 @@ set $mod Mod1
 font pango:Overpass 8
 floating_modifier $mod
 
-set $brownee_launcher "Command mode"
-bindsym $mod+Return mode $brownee_launcher
+bindsym $mod+Return exec i3-sensible-terminal; mode "default"
+bindsym $mod+Shift+q kill
+bindsym $mod+r exec rofi -show run ; mode "default"
+#bindsym d exec --no-startup-id i3-dmenu-desktop
 
-mode $brownee_launcher {
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
-	bindsym Shift+Return exec i3-sensible-terminal; mode "default"
-	bindsym Shift+q kill ; mode "default"
-	bindsym r exec rofi -show run ; mode "default"
-	bindsym d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+Left move workspace prev
+bindsym $mod+Shift+Right move workspace next
 
-	bindsym h focus left
-	bindsym j focus down
-	bindsym k focus up
-	bindsym l focus right
+# split in horizontal orientation
+bindsym $mod+backslash split h
 
-	bindsym Shift+h move left
-	bindsym Shift+j move down
-	bindsym Shift+k move up
-	bindsym Shift+l move right
-	bindsym Shift+Left move workspace prev
-	bindsym Shift+Right move workspace next
+# split in vertical orientation
+bindsym $mod+v split v
 
-	bindsym Shift+percent split h
-	bindsym Shift+quotedbl split v
-	bindsym $mod+f fullscreen toggle
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
 	
-	bindsym $mod+s layout stacking
-	bindsym $mod+w layout tabbed
-	bindsym $mod+e layout toggle split
-	bindsym Shift+space floating toggle
-	bindsym $mod+space focus mode_toggle
-	
-	bindsym $mod+a focus parent
-	bindsym Left workspace prev
-	bindsym Right workspace next
-	
-	bindsym 1 workspace 1
-	bindsym 2 workspace 2
-	bindsym 3 workspace 3
-	bindsym 4 workspace 4
-	bindsym 5 workspace 5
-	bindsym 6 workspace 6
-	bindsym 7 workspace 7
-	bindsym 8 workspace 8
-	bindsym 9 workspace 9
-	bindsym 0 workspace 10
-	
-	bindsym Shift+1 move container to workspace 1
-	bindsym Shift+2 move container to workspace 2
-	bindsym Shift+3 move container to workspace 3
-	bindsym Shift+4 move container to workspace 4
-	bindsym Shift+5 move container to workspace 5
-	bindsym Shift+6 move container to workspace 6
-	bindsym Shift+7 move container to workspace 7
-	bindsym Shift+8 move container to workspace 8
-	bindsym Shift+9 move container to workspace 9
-	bindsym Shift+0 move container to workspace 10
-	
-	bindsym Shift+c reload
-	bindsym $mod+Shift+r restart
-	bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
 
-	bindsym Shift+r mode "resize"
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
 
-        bindsym Escape mode "default"
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+	
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+bindsym $mod+Left workspace prev
+bindsym $mod+Right workspace next
+	
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+	
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+	
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+bindsym $mod+Shift+r mode "resize"
+bindsym Escape mode "default"
+
 }
 	
 mode "resize" {
