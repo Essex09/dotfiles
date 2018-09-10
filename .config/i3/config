@@ -19,7 +19,7 @@ exec compton -f
 exec --no-startup-id vmware-user-suid-wrapper
 exec --no-startup-id guake
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id xrandr --output Virtual1 --mode "1280x768"
+exec --no-startup-id xrandr --output Virtual1 --mode "1680x1050"
 
 set $mod Mod1
 font pango:Overpass 8
