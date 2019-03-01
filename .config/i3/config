@@ -154,9 +154,6 @@ bar {
 
 for_window [class="^.*"] border pixel 0
 
-# ddnotes
-#for_window [title="^notes:"] floating enable
-
 # Window borders
 new_window 1pixel
 
