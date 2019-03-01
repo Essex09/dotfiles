@@ -65,7 +65,8 @@ status_style=$reset_style'\[\033[0;90m\]' # gray color; use 0;37m for lighter co
 command_style=$reset_style
 prompt_style=$reset_style'\[\033[1;29m\]' # bold black
 
-PS1="$status_style"'$fill \t\n'"$prompt_style"'${debian_chroot:+($debian_chroot)}\[\e[1;33m\][\[\e[m\]\[\e[1;34m\]\u\[\e[m\]\[\e[1;33m\]@\[\e[m\]\[\e[1;34m\]\h\[\e[m\]\[\e[1;33m\]:\[\e[m\] \[\e[1;34m\]\W\[\e[m\]\[\e[1;33m\]]\[\e[m\]\[\e[1;33m\]\\$\[\e[m\]'"$command_style "
+#PS1="$status_style"'$fill \t\n'"$prompt_style"'${debian_chroot:+($debian_chroot)}\[\e[1;33m\][\[\e[m\]\[\e[1;34m\]\u\[\e[m\]\[\e[1;33m\]@\[\e[m\]\[\e[1;34m\]\h\[\e[m\]\[\e[1;33m\]:\[\e[m\] \[\e[1;34m\]\W\[\e[m\]\[\e[1;33m\]]\[\e[m\]\[\e[1;33m\]\\$\[\e[m\]'"$command_style "
+PS1="$status_style"'$fill \t\n'"$prompt_style"'${debian_chroot:+($debian_chroot)}\[\033[38;5;247m\][\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;15m\]\u\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;247m\]@\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;15m\]\h\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;247m\]:\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput bold)\]\w\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;247m\]]\\$\[$(tput sgr0)\]'"$command_style "
 
 # Reset color for command output
 # (this one is invoked every time before a command is executed):
