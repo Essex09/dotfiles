@@ -10,8 +10,7 @@ set $base08 #ee829f
 set $base09 #f99170
 set $base0A #ffefcc
 set $base0B #a5ffe1
-#set $base0c #fcfcfc
-#set $base0C #97e0ff
+set $base0c #fcfcfc
 set $base0D #97bbf7
 set $base0E #c0b7f9
 set $base0F #fcc09e
@@ -152,12 +151,7 @@ bar {
 
 # i3-gaps 
 
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 2
 
-# Window borders
-set new_window 1pixel
-
-set gaps inner 4
-set gaps outer 4
-
-set hide_edge_borders vertical
+set gaps inner 6
+set gaps outer 6
