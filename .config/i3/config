@@ -1,0 +1,166 @@
+set $base00 #101218
+set $base01 #1f222d
+set $base02 #252936
+set $base03 #fcfcff
+set $base04 #C0C5CE
+set $base05 #d1d4e0
+set $base06 #C9CCDB
+set $base07 #ffffff
+set $base08 #ee829f
+set $base09 #f99170
+set $base0A #ffefcc
+set $base0B #a5ffe1
+#set $base0c #fcfcfc
+#set $base0C #97e0ff
+set $base0D #97bbf7
+set $base0E #c0b7f9
+set $base0F #fcc09e
+
+exec compton -f
+exec --no-startup-id vmware-user-suid-wrapper
+exec --no-startup-id guake
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id xrandr --output Virtual1 --mode "1680x1050" #1920x1200 for large monitors
+
+set $mod Mod1
+font pango:Overpass 8
+floating_modifier $mod
+
+#bindsym $mod+Return exec i3-sensible-terminal; mode "default"
+bindsym $mod+Return exec xfce4-terminal --hide-menubar; mode "default"
+bindsym $mod+Shift+q kill
+bindsym $mod+r exec rofi -show run ; mode "default"
+#bindsym d exec --no-startup-id i3-dmenu-desktop
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+Left move workspace prev
+bindsym $mod+Shift+Right move workspace next
+
+# split in horizontal orientation
+bindsym $mod+backslash split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+	
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+	
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+bindsym $mod+Left workspace prev
+bindsym $mod+Right workspace next
+	
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+	
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+	
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+bindsym $mod+Shift+r mode "resize"
+bindsym Escape mode "default"
+
+	
+mode "resize" {
+	bindsym h resize shrink width 10 px or 10 ppt
+	bindsym j resize grow height 10 px or 10 ppt
+	bindsym k resize shrink height 10 px or 10 ppt
+	bindsym l resize grow width 10 px or 10 ppt
+
+	bindsym Left resize shrink width 10 px or 10 ppt
+	bindsym Down resize grow height 10 px or 10 ppt
+	bindsym Up resize shrink height 10 px or 10 ppt
+	bindsym Right resize grow width 10 px or 10 ppt
+
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+ 
+
+#client.focused $base0D $base0D $base00 $base01
+#client.focused_inactive $base02 $base02 $base03 $base01
+#client.unfocused $base01 $base01 $base03 $base01
+#client.urgent $base02 $base08 $base07 $base08
+
+bar {
+        status_command i3status
+        tray_output primary
+	colors {
+		separator $base03
+#		background $base01
+#		statusline $base05
+		focused_workspace $base0C $base0D $base00
+		active_workspace $base02 $base02 $base07
+		inactive_workspace $base01 $base01 $base03
+		urgent_workspace $base08 $base08 $base07
+	}	
+}
+
+
+# i3-gaps 
+
+for_window [class="^.*"] border pixel 0
+
+# ddnotes
+#for_window [title="^notes:"] floating enable
+
+# Window borders
+new_window 1pixel
+
+gaps inner 4
+gaps outer 4
+
+hide_edge_borders vertical
