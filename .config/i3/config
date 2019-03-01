@@ -155,9 +155,9 @@ bar {
 for_window [class="^.*"] border pixel 0
 
 # Window borders
-new_window 1pixel
+set new_window 1pixel
 
-gaps inner 4
-gaps outer 4
+set gaps inner 4
+set gaps outer 4
 
-hide_edge_borders vertical
+set hide_edge_borders vertical
