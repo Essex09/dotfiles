@@ -22,8 +22,7 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id xrandr --output Virtual1 --mode "1680x1050" #1920x1200 for large monitors
 
 set $mod Mod1
-# font pango:Overpass 8
-font Source Code Pro for Powerline Medium 12
+font pango:Overpass 8
 floating_modifier $mod
 
 #bindsym $mod+Return exec i3-sensible-terminal; mode "default"
