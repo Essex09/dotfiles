@@ -85,8 +85,3 @@ function prompt_command {
 }
 
 PROMPT_COMMAND=prompt_command
-
-### Powerline https://gist.github.com/leosuncin/25bad6ae66c5d513b986
-if [ -f /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ]; then
-source /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
-fi
