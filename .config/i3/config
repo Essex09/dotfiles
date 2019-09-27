@@ -15,7 +15,7 @@ set $base0D #97bbf7
 set $base0E #c0b7f9
 set $base0F #fcc09e
 
-exec compton -f
+exec_always compton -b -c --config ~/.config/compton/compton.conf
 exec --no-startup-id vmware-user-suid-wrapper
 exec --no-startup-id guake
 exec --no-startup-id nitrogen --restore
