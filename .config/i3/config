@@ -19,7 +19,7 @@ exec_always compton -b -c --config ~/.config/compton/compton.conf
 exec --no-startup-id vmware-user-suid-wrapper
 exec --no-startup-id guake
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id xrandr --output Virtual1 --mode "1680x1050" #1920x1200 for large monitors
+exec --no-startup-id xrandr --output Virtual1 --mode "1920x1080" #1920x1200 for large monitors
 
 set $mod Mod1
 font pango:Overpass 8
