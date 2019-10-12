@@ -19,7 +19,7 @@ exec_always compton -b -c --config ~/.config/compton/compton.conf
 exec --no-startup-id vmware-user-suid-wrapper
 exec --no-startup-id guake
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id xrandr --output Virtual1 --mode "1920x1080" #1920x1200 for large monitors, --scale 0.5x0.5 for 4K 
+exec --no-startup-id xrandr --output Virtual1 --mode "1920x1080" #1920x1200 for large monitors, --scale 0.6x0.6 for 4K 
 
 set $mod Mod1
 font pango:Overpass 8
@@ -29,6 +29,7 @@ floating_modifier $mod
 bindsym $mod+Return exec xfce4-terminal --hide-menubar --hide-scrollbar; mode "default"
 bindsym $mod+Shift+q kill
 bindsym $mod+r exec rofi -show run ; mode "default"
+bindsym $mod+Shift+r exec xrandr --output Virtual1 --scale 0.6x0.6
 #bindsym d exec --no-startup-id i3-dmenu-desktop
 
 bindsym $mod+h focus left
