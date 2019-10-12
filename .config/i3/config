@@ -29,7 +29,7 @@ floating_modifier $mod
 bindsym $mod+Return exec xfce4-terminal --hide-menubar --hide-scrollbar; mode "default"
 bindsym $mod+Shift+q kill
 bindsym $mod+r exec rofi -show run ; mode "default"
-bindsym $mod+Shift+r exec xrandr --output Virtual1 --scale 0.6x0.6
+bindsym $mod+Shift+s exec xrandr --output Virtual1 --scale 0.6x0.6
 #bindsym d exec --no-startup-id i3-dmenu-desktop
 
 bindsym $mod+h focus left
